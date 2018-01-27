@@ -1,8 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+ 'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -12,6 +8,7 @@ import {
   View
 } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import {HeaderTop} from './components/Header.js'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,25 +17,15 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+
 export default class App extends Component<{}> {
   render() {
     return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Right>
-        </Header>
+      <Container backgroundColor='#68C3A3'>
+        <HeaderTop />
+          <Button large primary>
+            <Text>Bluetooth </Text>
+          </Button>
       </Container>
     );
   }
@@ -60,5 +47,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  main: {
+    backgroundColor: '#68C3A3',
   },
 });
